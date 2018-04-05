@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<form action="/" method="POST">
+    <label>Username</label>
+    <input type="text" name="username" value='{{username}}' /> 
+    {% if name_error %}
+      <h3 class='error'>{{ name_error }}</h3>
+    {% endif %}
+    
+    <br>
+
+    <label>Password </label>  
+    <input type="password" name="pwd" value='{{pwd}}' />  
+    {% if pwd_error %}
+      <h3 class='error'>{{ pwd_error }}</h3>
+    {% endif %}
+    
+    <br> 
+
+
+    <label>Verify Password</label>   
+    <input type="password"  name="v_pwd" value='{{v_pwd}}' /> 
+    {% if v_pwd_error %}
+      <h3 class='error'>{{ v_pwd_error }}</h3>
+    {% endif %}
+    
+    <br>
+
+
+    <label>Email(Optional)</label>  
+    <input type="text"  name="email"  value='{{email}}' /> 
+    {% if email_error %}
+      <h3 class='error'>{{ email_error }}</h3>
+    {% endif %}
+    
+    <p>
+    <p>
+  
+    <input type="submit" value="Submit"/>
+</form>
+
+
+{% endblock %}
